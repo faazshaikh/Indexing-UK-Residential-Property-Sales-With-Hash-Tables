@@ -1,41 +1,37 @@
-Indexing Large Datasets with Hash Tables
+# Hash Table Indexing for Large Datasets
 
-This project implements an in-memory hash table index for large CSV datasets to demonstrate how indexing improves lookup speed and memory efficiency.
-It’s based on the UK Land Registry Price Paid Data and explores concepts of hashing, dynamic memory, and cache performance.
+A clean and efficient C program that demonstrates how to index and search large datasets using hash tables for fast lookups and optimized memory performance.
 
-📘 Overview
+## Features
 
-When dealing with millions of records, searching linearly through data is slow.
-This assignment compares:
+- ⚙️ **Hash-Based Indexing**: Enables near constant-time lookups using modular hashing  
+- 💾 **Dynamic Memory Allocation**: Efficiently loads large CSV datasets into memory  
+- 🔍 **Search Comparison**: Benchmarks linear vs. indexed search performance  
+- 📊 **Load Factor Analysis**: Evaluates hash table usage and collision distribution  
+- 🧠 **Collision Handling**: Implements linked list chaining for hash conflicts  
 
-Linear Search (O(n)) — scanning each record sequentially
+## Getting Started
 
-Hash Index Search (O(1)) — direct lookup using a hash table
+### Prerequisites
 
-By indexing only the street column, the program drastically reduces search time and improves efficiency.
+- GCC compiler  
+- Make utility  
+- macOS, Linux, or WSL (for Windows users)
 
-🧩 Features
+### Installation
 
-Dynamically loads CSV files into memory (read_file())
+1. Clone the repository, build, and run:
+   ```bash
+   git clone <repository-url>
+   cd Hash-Table-Indexing
+   make
+   ./main
+   make clean   # optional
+   ```
 
-Builds a hash table index on the street field (createIndexOnStreet())
+## Example Output
 
-Performs both linear and indexed searches (searchStreetLinear() / searchStreet())
-
-Analyzes load factor and unused slots to assess index performance
-
-Includes a Makefile for easy compilation and cleanup
-
-⚙️ How to Build and Run
-# Compile the program
-make
-
-# Run the executable
-./main
-
-
-If successful, you’ll see output similar to:
-
+```bash
 Total records appended: 666013
 Total records appended: 1500230
 Hash index on street created.
@@ -43,42 +39,36 @@ Time (Linear Search): 0.046075 seconds
 Time (Hash Index): 0.000176 seconds
 Unused hash slots: 11504 out of 100000 (11.50% unused)
 Hash table load factor: 0.885
+```
 
-📊 Discussion Summary
+## Project Structure
 
-Memory efficiency: dynamically allocated fields (like district) save space compared to fixed arrays (street).
+```bash
+project/
+├── myDSlib.c        # Core implementation: file reading, hashing, search functions
+├── myDSlib.h        # Struct definitions, constants, and function prototypes
+├── main.c           # Entry point and test runner
+├── Makefile         # Build automation
+├── Report.pdf       # Documentation and appendix
+└── .gitignore       # Ignores CSVs, binaries, and temp files
+```
 
-Performance gap: caching and memory layout reduce the theoretical gap between O(1) and O(n) searches.
+## Design Features
 
-Optimal load factor: between 0.5–0.9 for balance between speed and memory use.
+- **Memory Efficient**: Dynamically allocates and expands dataset memory  
+- **Fast Lookup**: Hash-based search achieves O(1) expected performance  
+- **Modular Design**: Separation of logic, structures, and compilation rules  
+- **Performance Insights**: Tracks runtime differences between methods  
+- **Scalable Implementation**: Handles datasets with millions of entries  
 
-🧮 File Structure
-📂 COMPSCI1XC3_Assignment4
-├── myDSlib.c          # Implementation (your main logic)
-├── myDSlib.h          # Header file (structs, constants, prototypes)
-├── main.c             # Provided driver (do not modify)
-├── Makefile           # Build automation
-├── Report.pdf         # Documentation & appendix
-├── .gitignore         # Ignore object files and datasets
-└── README.md          # This file
+## Technologies Used
 
-🚫 Excluded Files
+- C (GCC)  
+- Makefile build system  
+- GDB debugger  
+- Hash tables and linked lists  
+- Dynamic memory management (`malloc`, `realloc`, `free`)  
 
-Do not upload:
+## Author
 
-Large CSV files (e.g., pp-2024.csv, pp-2023.csv)
-
-Object files or executables (*.o, a.out, etc.)
-
-🧰 Technologies
-
-Language: C
-
-Concepts: Hash Tables, Dynamic Memory Allocation, Linked Lists, Caching
-
-Tools: GCC, Makefile, GDB
-
-🧑‍💻 Author
-
-Faaz Shaikh Waheed Shaikh 
-McMaster University 
+Faaz Shaikh Waheed Shaikh (Big 808)
