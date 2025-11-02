@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/faazshaikh/Documents/GitHub/Indexing-UK-Residential-Property-Sales-With-Hash-Tables",
+      "program": "/Users/faazshaikh/Documents/GitHub/Indexing-UK-Residential-Property-Sales-With-Hash-Tables/build/Debug/outDebug"
+    }
+  ]
+}
