@@ -4,19 +4,13 @@ A clean and efficient C program that demonstrates how to index and search large 
 
 ## Features
 
-- ⚙️ **Hash-Based Indexing**: Enables near constant-time lookups using modular hashing  
-- 💾 **Dynamic Memory Allocation**: Efficiently loads large CSV datasets into memory  
-- 🔍 **Search Comparison**: Benchmarks linear vs. indexed search performance  
-- 📊 **Load Factor Analysis**: Evaluates hash table usage and collision distribution  
-- 🧠 **Collision Handling**: Implements linked list chaining for hash conflicts  
+- **Hash-Based Indexing**: Enables near constant-time lookups using modular hashing  
+- **Dynamic Memory Allocation**: Efficiently loads large CSV datasets into memory  
+- **Search Comparison**: Benchmarks linear vs. indexed search performance  
+- **Load Factor Analysis**: Evaluates hash table usage and collision distribution  
+- **Collision Handling**: Implements linked list chaining for hash conflicts  
 
 ## Getting Started
-
-### Prerequisites
-
-- GCC compiler  
-- Make utility  
-- macOS, Linux, or WSL (for Windows users)
 
 ### Installation
 
@@ -71,4 +65,4 @@ project/
 
 ## Author
 
-Faaz Shaikh Waheed Shaikh (Big 808)
+Faaz Shaikh Waheed Shaikh 
