@@ -1,27 +1,40 @@
-Hash Table Indexing for Large Datasets
+Indexing Large Datasets with Hash Tables
 
-This project demonstrates an efficient way to index and search large datasets using hash tables in C. It loads CSV data into memory, creates an index on a specific column (for example, street name), and compares the performance of linear search versus hash-based lookup.
+This project implements an in-memory hash table index for large CSV datasets to demonstrate how indexing improves lookup speed and memory efficiency.
+It’s based on the UK Land Registry Price Paid Data and explores concepts of hashing, dynamic memory, and cache performance.
 
-Overview
+📘 Overview
 
-When handling large datasets, linear searching can be extremely slow. This project uses a hash-based index to speed up lookups by mapping keys (like street names) to memory addresses.
+When dealing with millions of records, searching linearly through data is slow.
+This assignment compares:
 
-Features:
+Linear Search (O(n)) — scanning each record sequentially
 
-Dynamic memory allocation for scalable data loading
+Hash Index Search (O(1)) — direct lookup using a hash table
 
-Hash table construction with collision handling (linked lists)
+By indexing only the street column, the program drastically reduces search time and improves efficiency.
 
-Search performance comparison between indexed and non-indexed methods
+🧩 Features
 
-Load factor analysis to measure efficiency and memory usage
+Dynamically loads CSV files into memory (read_file())
 
-How to Build and Run
+Builds a hash table index on the street field (createIndexOnStreet())
+
+Performs both linear and indexed searches (searchStreetLinear() / searchStreet())
+
+Analyzes load factor and unused slots to assess index performance
+
+Includes a Makefile for easy compilation and cleanup
+
+⚙️ How to Build and Run
+# Compile the program
 make
+
+# Run the executable
 ./main
 
 
-Example output:
+If successful, you’ll see output similar to:
 
 Total records appended: 666013
 Total records appended: 1500230
@@ -31,42 +44,41 @@ Time (Hash Index): 0.000176 seconds
 Unused hash slots: 11504 out of 100000 (11.50% unused)
 Hash table load factor: 0.885
 
-Core Components
-File	Description
-myDSlib.c	Core implementation: file reading, hashing, and search functions
-myDSlib.h	Structures, constants, and function prototypes
-main.c	Entry point and test runner
-Makefile	Build automation
-Report.pdf	Documentation of build, usage, and analysis
-.gitignore	Ignores CSVs, binaries, and object files
-Key Functions
+📊 Discussion Summary
 
-read_file() – Loads CSV data into dynamically allocated memory
+Memory efficiency: dynamically allocated fields (like district) save space compared to fixed arrays (street).
 
-createIndexOnStreet() – Builds the hash table index
+Performance gap: caching and memory layout reduce the theoretical gap between O(1) and O(n) searches.
 
-searchStreetLinear() – Performs full linear scan
+Optimal load factor: between 0.5–0.9 for balance between speed and memory use.
 
-searchStreet() – Performs constant-time indexed lookup
+🧮 File Structure
+📂 COMPSCI1XC3_Assignment4
+├── myDSlib.c          # Implementation (your main logic)
+├── myDSlib.h          # Header file (structs, constants, prototypes)
+├── main.c             # Provided driver (do not modify)
+├── Makefile           # Build automation
+├── Report.pdf         # Documentation & appendix
+├── .gitignore         # Ignore object files and datasets
+└── README.md          # This file
 
-count_unused_slots() – Evaluates load factor and slot usage
+🚫 Excluded Files
 
-Insights
+Do not upload:
 
-Performance: Hash indexing drastically reduces lookup times.
+Large CSV files (e.g., pp-2024.csv, pp-2023.csv)
 
-Memory Use: Dynamic fields minimize waste compared to static arrays.
+Object files or executables (*.o, a.out, etc.)
 
-Efficiency: Optimal load factors (around 0.8) balance speed and collisions.
-
-Technologies Used
+🧰 Technologies
 
 Language: C
 
-Concepts: Hash Tables, Linked Lists, Memory Management, Caching
+Concepts: Hash Tables, Dynamic Memory Allocation, Linked Lists, Caching
 
-Tools: GCC, Make, GDB
+Tools: GCC, Makefile, GDB
 
-Author
+🧑‍💻 Author
 
-Faaz Shaikh Waheed Shaikh (Big 808)
+Faaz Shaikh Waheed Shaikh 
+McMaster University 
