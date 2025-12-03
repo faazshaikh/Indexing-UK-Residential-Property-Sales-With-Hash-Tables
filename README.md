@@ -65,4 +65,4 @@ project/
 
 ## Author
 
-Faaz Shaikh Waheed Shaikh 
+Faaz Waheed Shaikh 
